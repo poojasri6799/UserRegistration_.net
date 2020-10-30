@@ -42,5 +42,10 @@ namespace UserRegistration
         {
             return Regex.Match(upperCase, PASSWORD).Success;
         }
+
+        public bool numericValidater(string numericNumber)
+        {
+            return Regex.Match(numericNumber, PASSWORD).Success;
+        }
     }
 }
