@@ -14,7 +14,8 @@ namespace UserResistrationTest
         [Test]
         public void firstName()
         {
-            Assert.Pass();
+            bool result = userRegistration.firstNameValidater("Pooja");
+            Assert.True(result);
         }
     }
 }
