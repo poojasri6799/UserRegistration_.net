@@ -37,5 +37,10 @@ namespace UserRegistration
         {
             return Regex.Match(minEight, PASSWORD).Success;
         }
+
+        public bool minimumUpperCase(string upperCase)
+        {
+            return Regex.Match(upperCase, PASSWORD).Success;
+        }
     }
 }
