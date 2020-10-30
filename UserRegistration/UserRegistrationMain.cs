@@ -9,8 +9,8 @@ namespace UserRegistration
     {
         //Name regular expression pattern
         public string NAMEPATTERN = "^[A-Z]{1}[a-z]{2,}$";
-
-
+        public string MAILID = "[A-Za-z0-9]+[A-Za-z]+.[a-z]{2,4}$";
+        public string MOBILENO = "[91]+[ ]+[6-9][0-9]{9}";
 
         public bool firstNameValidater(string firstName)
         {
@@ -20,6 +20,11 @@ namespace UserRegistration
         public bool lastNameValidater(string lastNmae)
         {
             return Regex.Match(lastNmae, NAMEPATTERN).Success;
+        }
+
+        public bool mailIdValidater(string mailId)
+        {
+            return Regex.Match(mailId, MAILID).Success;
         }
     }
 }
