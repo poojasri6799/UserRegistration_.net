@@ -27,5 +27,22 @@ namespace UserResistrationTest
             bool result = userRegistration.firstNameValidater("po");
             Assert.False(result);
         }
+
+        //Test Method to validate last name
+        [Test]
+        public void GivenProperLastName_ShouldReturnTrue()
+        {
+            bool result = userRegistration.lastNameValidater("Sri");
+            Assert.True(result);
+        }
+
+        //Test Method to Invalidate last name
+        [Test]
+        public void GivenInvalidLastName_ShouldReturnFalse()
+        {
+            bool result = userRegistration.firstNameValidater("sr");
+            Assert.False(result);
+        }
+
     }
 }
