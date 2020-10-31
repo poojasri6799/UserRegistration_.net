@@ -7,69 +7,79 @@ namespace UserRegistration
 {
     public class UserRegistrationMain
     {
-        
-        //Name regular expression pattern
+
+        /// <summary>
+        ///name regular expression pattern
+        /// </summary>
         public string NAMEPATTERN = "^[A-Z]{1}[a-z]{2,}$";
 
 
-        //Mail regular expression pattern
-        public string MAILID = "^[a-zA-Z0-9]+([.][a-zA-Z0-9]+)?@[a-zA-Z0-9]+.[a-zA-Z]{2,4}([.][a-zA-Z]{2})?$";
+        /// <summary>
+        /// Mail regular expression pattern
+        /// </summary>
+        public string MAILID = "^[a-zA-Z0-9]+([._+#-][a-zA-Z0-9]+)*@[a-zA-Z1-9]+.[a-zA-Z]{2,4}(.[a-zA-Z]{2,3})?$";
 
 
-        //Phone number regular expression pattern
-        public string MOBILENO = "^[91]+[ ]+[6-9][0-9]{9}$";
+        /// <summary>
+        /// Phone number regular expression pattern
+        /// </summary>
+        public string MOBILENO = "^[91]+[ ]+[6-9]+[0-9]{9}$";
+       
 
-
-        //Password regular expression pattern
+        /// <summary>
+        /// Password regular expression pattern
+        /// </summary>
         public string PASSWORD = "^[0-9A-Za-z]*[!@#$%&,.?][A-Za-z0-9]*$";
 
-        
-        //function for name
+
+        /// <summary>
+        /// function for name validater
+        /// </summary>
+        /// <param name="firstName"></param>
+        /// <returns></returns>
         public bool firstNameValidater(string firstName)
         {
             return Regex.Match(firstName, NAMEPATTERN).Success;
         }
 
-        //function for name
+        /// <summary>
+        /// function for last name validater
+        /// </summary>
+        /// <param name="lastNmae"></param>
+        /// <returns></returns>
         public bool lastNameValidater(string lastNmae)
         {
             return Regex.Match(lastNmae, NAMEPATTERN).Success;
         }
 
-        //function for mail
+        /// <summary>
+        /// function for mail id 
+        /// </summary>
+        /// <param name="mailId"></param>
+        /// <returns></returns>
         public bool mailIdValidater(string mailId)
         {
             return Regex.Match(mailId, MAILID).Success;
         }
 
-        //function for phone number
+        /// <summary>
+        /// function for phone number
+        /// </summary>
+        /// <param name="phoneNo"></param>
+        /// <returns></returns>
         public bool PhoneNumberValidater(string phoneNo)
         {
             return Regex.Match(phoneNo, MOBILENO).Success;
         }
 
-        //function for password
-        public bool minimumEightValidater(string minEight)
+        /// <summary>
+        /// function for password
+        /// </summary>
+        /// <param name="password"></param>
+        /// <returns></returns>
+        public bool passwordValidater(string password)
         {
-            return Regex.Match(minEight, PASSWORD).Success;
-        }
-
-        //function for password
-        public bool minimumUpperCase(string upperCase)
-        {
-            return Regex.Match(upperCase, PASSWORD).Success;
-        }
-
-        //function for password
-        public bool numericValidater(string numericNumber)
-        {
-            return Regex.Match(numericNumber, PASSWORD).Success;
-        }
-
-        //function for password
-        public bool specialCharValidater(string specialChar)
-        {
-            return Regex.Match(specialChar, PASSWORD).Success;
+            return Regex.Match(password, PASSWORD).Success;
         }
     }
 }
